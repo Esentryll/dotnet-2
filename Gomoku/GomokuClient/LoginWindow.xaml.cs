@@ -10,7 +10,7 @@ namespace GomokuClient
     {
         public static string ServerAddress { get; set; } = "http://127.0.0.1";
         public static int ServerPort { get; set; } = 5001;
-        private readonly Client _client = new Client($"{ServerAddress}:{ServerPort}");
+        private Client? _client;
         public string Login { get; set; } = string.Empty;
 
         public LoginWindow()
@@ -20,9 +20,10 @@ namespace GomokuClient
 
         private void PlayClick(object sender, RoutedEventArgs e)
         {
+            
             BusyIndicator.IsBusy = true;
             Login = LoginTextBox.Text;
-            ServerAddress = ServerAddressTextBox.Text;
+            _client = new (ServerAddressTextBox.Text);
             _client.LoginSubject.Subscribe(FindOpponent);
             Task sumTask = new(async () =>
             {
