@@ -101,24 +101,6 @@ namespace GomokuClient
             }
         }
 
-        //private void LockPlayground()
-        //{
-        //    for (int i = 0; i < _playground.GetLength(0); ++i)
-        //        for (int j = 0; j < _playground.GetLength(1); ++j)
-        //        {
-        //            _playground[i, j].IsEnabled = false;
-        //        }
-        //}
-
-        //private void UnlockPlayground()
-        //{
-        //    for (int i = 0; i < _playground.GetLength(0); ++i)
-        //        for (int j = 0; j < _playground.GetLength(1); ++j)
-        //        {
-        //            _playground[i, j].IsEnabled = true;
-        //        }
-        //}
-
         private void ClearPlayground()
         {
             for (int i = 0; i < _playground.GetLength(0); ++i)

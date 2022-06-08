@@ -8,7 +8,9 @@ namespace GomokuClient
 {
     public partial class LoginWindow : Window
     {
-        private readonly Client _client = new();
+        public static string ServerAddress { get; set; } = "http://127.0.0.1";
+        public static int ServerPort { get; set; } = 5001;
+        private readonly Client _client = new Client($"{ServerAddress}:{ServerPort}");
         public string Login { get; set; } = string.Empty;
 
         public LoginWindow()
@@ -20,6 +22,7 @@ namespace GomokuClient
         {
             BusyIndicator.IsBusy = true;
             Login = LoginTextBox.Text;
+            ServerAddress = ServerAddressTextBox.Text;
             _client.LoginSubject.Subscribe(FindOpponent);
             Task sumTask = new(async () =>
             {

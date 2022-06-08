@@ -27,9 +27,9 @@ namespace GomokuClient
         private readonly Subject<Unit> _disconnectedSubject = new();
         private bool _alreadyDisconnected;
 
-        public Client()
+        public Client(string address)
         {
-            _channel = GrpcChannel.ForAddress("http://localhost:5000");
+            _channel = GrpcChannel.ForAddress(address);
             _client = new Gomoku.Gomoku.GomokuClient(_channel);
             _stream = _client.Play();
             Task.Run(ReadEvents);

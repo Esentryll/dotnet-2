@@ -6,7 +6,7 @@
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:local="clr-namespace:GomokuClient"
         mc:Ignorable="d"
-        Title="Гомоку" Height="150" Width="300" ResizeMode="NoResize">
+        Title="Гомоку" Height="170" Width="300" ResizeMode="NoResize">
     
     <xctk:BusyIndicator x:Name="BusyIndicator">
         <xctk:BusyIndicator.BusyContentTemplate>
@@ -26,6 +26,7 @@
         <Grid>
             <Grid.RowDefinitions >
                 <RowDefinition/>
+                <RowDefinition/>
                 <RowDefinition Height="70"/>
             </Grid.RowDefinitions>
             
@@ -42,7 +43,15 @@
                   Height="20" Width="145" Margin="10" TextWrapping="Wrap" HorizontalScrollBarVisibility="Auto">
             </TextBox>
 
-            <Grid Grid.Row ="1" Grid.Column="1" HorizontalAlignment="Right" Margin="20">
+            <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center">
+                Введите адрес:
+            </Label>
+
+            <TextBox Grid.Row="1" Grid.Column="1" x:Name="ServerAddressTextBox" HorizontalAlignment="Left" VerticalAlignment="Center" 
+                  Height="20" Width="145" Margin="10" TextWrapping="Wrap" HorizontalScrollBarVisibility="Auto">
+            </TextBox>
+
+            <Grid Grid.Row ="2" Grid.Column="1" HorizontalAlignment="Right" Margin="20">
                 <Button x:Name="PlayButton" Height="30" Width="100" Click="PlayClick">
                     <Label>
                         Играть
