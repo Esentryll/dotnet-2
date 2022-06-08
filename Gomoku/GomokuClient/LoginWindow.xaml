@@ -47,7 +47,7 @@
                 Введите адрес:
             </Label>
 
-            <TextBox Grid.Row="1" Grid.Column="1" x:Name="ServerAddressTextBox" HorizontalAlignment="Left" VerticalAlignment="Center" 
+            <TextBox Grid.Row="1" Text="http://127.0.0.1" Grid.Column="1" x:Name="ServerAddressTextBox" HorizontalAlignment="Left" VerticalAlignment="Center" 
                   Height="20" Width="145" Margin="10" TextWrapping="Wrap" HorizontalScrollBarVisibility="Auto">
             </TextBox>
 
